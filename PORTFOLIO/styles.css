@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+/* Header Section */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  background-color: black;
+  color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: all 300ms ease-in-out;
+}
+
+.scroll-down {
+	header {
+		transform: translate3d(0, -100%, 0);
+	}
+}
+
+.scroll-up {
+	header {
+		filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
+	}
+}
+
+.menu-is-open {
+	overflow: hidden;
+
+	header {
+		filter: none;
+	}
+}
+
+/* Header Name Font */
+.name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+
+nav button {
+  font-size: 18px;
+  color: white;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: white;
+  margin-left: 20px;
+}
+
+nav button:hover {
+  color: white;
+}
+
+nav button:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+nav button:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+/* Parallax Section Styling */
+.parallax {
+    position: relative;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.parallax.home {
+    background-image: url('./Media/lone-tree.jpg');
+}
+
+.parallax.projects {
+    background-image: url('./Media/view-old-tree-lake-with-snow-covered-mountains-cloudy-day.jpg');
+}
+
+.parallax.contact {
+    background-image: url('./Media/painting-mountain-lake-with-mountain-background.jpg');
+}
+
+.content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Flip Cards */
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contact Section */
+.contact-box {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+/*project cards*/
+
+.card1 {
+  position: relative;
+  width: 220px;
+  height: 320px;
+  background: mediumturquoise;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.card1::before,
+.card1::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: lightblue;
+  transition: all 0.5s;
+}
+
+.card1::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 15px 0 100%;
+}
+
+.card1::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100%  0 15px;
+}
+
+.card1:hover::before,
+.card1:hover:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.card1:hover:after {
+  content: "without any knowledge of JS and HTML";
+}
+
+
+.card {
+  position: relative;
+  width: 220px;
+  height: 320px;
+  background: mediumturquoise;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: lightblue;
+  transition: all 0.5s;
+}
+
+.card::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 15px 0 100%;
+}
+
+.card::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100%  0 15px;
+}
+
+.card:hover::before,
+.card:hover:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.card:hover:after {
+  content: "nothing";
+}
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+section {
+  height: 100vh;
+  /* Additional styling */
+}
+
+
